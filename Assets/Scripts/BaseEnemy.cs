@@ -7,7 +7,7 @@ public abstract class BaseEnemy : BaseCharacter
     [SerializeField] protected int damage;
     [SerializeField] protected float moveSpeed;
     private Collider2D collider;
-    [SerializeField] protected GameObject foodSpawner;
+    [SerializeField] protected GameObject foodToSpawn;
     [SerializeField] protected GenericSpawner genericSpawner;
 
     protected Transform player;
