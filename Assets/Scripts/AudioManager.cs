@@ -11,6 +11,7 @@ public class AudioManager : Singleton<AudioManager>
     public void PlaySound(AudioClip clip)
     {
         source.PlayOneShot(clip, sfxVolume);
+        Debug.Log(clip.name + " has been played");
     }
     
     public void PlayMusic(AudioClip clip, bool loop)

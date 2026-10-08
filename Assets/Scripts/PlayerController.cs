@@ -7,9 +7,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] InputAction playerAttack;
     [SerializeField] float playerSpeed = 10f;
     [SerializeField] GameObject bubbleSpawn, bubblePrefab;
+    [SerializeField] private AudioClip shootSound;
     Rigidbody2D rb;
     Collider2D collider;
     Vector2 moveDirection;
+    
     
     private void OnEnable()
     {
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
+        AudioManager.Instance.PlaySound(shootSound);
         Instantiate(bubblePrefab, bubbleSpawn.transform.position, Quaternion.identity);
     }
 }
