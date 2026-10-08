@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] InputAction playerControlls;
     [SerializeField] InputAction playerAttack;
     [SerializeField] float playerSpeed = 10f;
+    [SerializeField] GameObject bubbleSpawn, bubblePrefab;
     Rigidbody2D rb;
     Collider2D collider;
     Vector2 moveDirection;
@@ -47,11 +48,12 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer()
     {
+        //moveDirection.y = 0;
         rb.linearVelocity = playerSpeed *  moveDirection;
     }
 
     void Attack()
     {
-        
+        Instantiate(bubblePrefab, bubbleSpawn.transform.position, Quaternion.identity);
     }
 }

@@ -17,6 +17,7 @@ public class Enemy1 : BaseEnemy
     protected virtual void MoveTowardsPlayer()
     {
         Vector2 direction = (player.position - transform.position).normalized;
+        direction.y = 0;
         rb.linearVelocity = direction * moveSpeed;
     }
 

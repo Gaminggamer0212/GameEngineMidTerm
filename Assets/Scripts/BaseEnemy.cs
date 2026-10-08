@@ -17,7 +17,7 @@ public abstract class BaseEnemy : BaseCharacter
        player = GameObject.FindWithTag("Player").transform;
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         /*if (collision.gameObject.CompareTag("Player"))
         {
@@ -25,7 +25,7 @@ public abstract class BaseEnemy : BaseCharacter
             player.TakeDamage(damage);
         }*/
 
-        if (other.gameObject.CompareTag("Bubble"))
+        if (collision.gameObject.CompareTag("Bubble"))
         {
             Death();
         }
