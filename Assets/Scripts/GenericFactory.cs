@@ -2,5 +2,5 @@ using UnityEngine;
 
 public abstract class GenericFactory : MonoBehaviour
 {
-    public abstract GameObject SpawnGameObject(GameObject prefab, Vector3 position);
+    public abstract GameObject SpawnGameObject(Food prefab, Vector3 position);
 }

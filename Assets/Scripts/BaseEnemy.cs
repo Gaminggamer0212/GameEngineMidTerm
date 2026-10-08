@@ -7,6 +7,8 @@ public abstract class BaseEnemy : BaseCharacter
     [SerializeField] protected int damage;
     [SerializeField] protected float moveSpeed;
     private Collider2D collider;
+    [SerializeField] protected GameObject foodSpawner;
+    [SerializeField] protected GenericSpawner genericSpawner;
 
     protected Transform player;
     protected Rigidbody2D rb;
@@ -19,11 +21,11 @@ public abstract class BaseEnemy : BaseCharacter
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        /*if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             BaseCharacter player = collision.gameObject.GetComponent<BaseCharacter>();
             player.TakeDamage(damage);
-        }*/
+        }
 
         if (collision.gameObject.CompareTag("Bubble"))
         {
@@ -49,6 +51,7 @@ public abstract class BaseEnemy : BaseCharacter
     protected override void Death()
     {
         base.Death();
+        
         Destroy(gameObject);
     }
 }
